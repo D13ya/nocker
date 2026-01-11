@@ -2,8 +2,10 @@ name: Universal Availability Check
 
 on:
   workflow_dispatch:
+  repository_dispatch:
+    types: [on-demand-check]
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 * * * *"
 
 jobs:
   check-site:
